@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDG & DevFest - Google DevFest Workshop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #1a73e8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 80px 0;
+        }
+
+        .content h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #1a73e8;
+            font-weight: 300;
+        }
+
+        .content h3 {
+            font-size: 24px;
+            margin: 30px 0 15px 0;
+            color: #333;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 4px solid #4285f4;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">DevFest Workshop</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="gdg-devfest.html">GDG & DevFest</a></li>
+                <li><a href="devtools-mcp.html">DevTools MCP</a></li>
+                <li><a href="about-me.html">关于我</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>GDG & DevFest</h1>
+            <p>了解 Google Developer Groups 和 DevFest 的全球开发者社区</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <h2>什么是 GDG？</h2>
+            <p>Google Developer Groups (GDG) 是 Google 支持的开发者社区组织，遍布全球各地。GDG 为开发者提供了一个学习、分享和交流的平台，让开发者能够更好地了解 Google 技术和开源技术。</p>
+
+            <div class="highlight-box">
+                <h3>🌟 GDG 的使命</h3>
+                <p>通过技术分享、工作坊、黑客马拉松等活动，促进本地开发者社区的发展，帮助开发者提升技能，推动技术创新。</p>
+            </div>
+
+            <h2>什么是 DevFest？</h2>
+            <p>DevFest 是 GDG 组织年度最大型的技术活动，通常在每年的第四季度举办。这是一个全球性的开发者节日，各地的 GDG 社区都会组织本地的 DevFest 活动。</p>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>技术分享</h3>
+                    <p>来自业界专家的技术演讲和实践经验分享</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <h3>社区交流</h3>
+                    <p>与本地开发者建立联系，扩展技术人脉网络</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💡</div>
+                    <h3>学习成长</h3>
+                    <p>学习最新的技术趋势和最佳实践</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚀</div>
+                    <h3>创新启发</h3>
+                    <p>获得项目灵感，推动技术创新和应用</p>
+                </div>
+            </div>
+
+            <h2>DevFest 的特色</h2>
+            <p>每年的 DevFest 都有不同的主题和亮点，涵盖人工智能、移动开发、Web 技术、云计算等多个技术领域。活动形式多样，包括技术演讲、工作坊、代码实验室、黑客马拉松等。</p>
+
+            <div class="highlight-box">
+                <h3>🎉 今年的主题</h3>
+                <p>今年的 DevFest 聚焦于 Chrome DevTools MCP Server，探索现代前端开发工具的创新应用，帮助开发者提升调试效率和开发体验。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Google DevFest Workshop. 由 Dick 组织举办。</p>
+        </div>
+    </footer>
+</body>
+</html>

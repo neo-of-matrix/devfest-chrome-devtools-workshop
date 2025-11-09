@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools MCP - Google DevFest Workshop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #1a73e8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 80px 0;
+        }
+
+        .content h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #1a73e8;
+            font-weight: 300;
+        }
+
+        .content h3 {
+            font-size: 24px;
+            margin: 30px 0 15px 0;
+            color: #333;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .tech-card {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .tech-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+        }
+
+        .benefits {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .benefits li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #34a853;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">DevFest Workshop</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="gdg-devfest.html">GDG & DevFest</a></li>
+                <li><a href="devtools-mcp.html">DevTools MCP</a></li>
+                <li><a href="about-me.html">关于我</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Chrome DevTools MCP Server</h1>
+            <p>探索现代前端开发工具的创新应用</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <h2>什么是 MCP？</h2>
+            <p>MCP (Model Context Protocol) 是一种协议，它允许 AI 模型与各种工具和服务进行交互。Chrome DevTools MCP Server 将这个协议应用于浏览器开发工具，为开发者提供了全新的调试和开发体验。</p>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">🔧</div>
+                    <h3>自动化调试</h3>
+                    <p>通过 MCP 协议实现自动化的页面调试和性能分析</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🎯</div>
+                    <h3>精准控制</h3>
+                    <p>精确控制页面元素，实现复杂的交互测试场景</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">📊</div>
+                    <h3>数据收集</h3>
+                    <p>自动收集页面性能数据和用户行为分析</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🚀</div>
+                    <h3>效率提升</h3>
+                    <p>大幅提升开发和调试效率，减少重复性工作</p>
+                </div>
+            </div>
+
+            <h2>核心功能</h2>
+            
+            <h3>🔍 页面检查</h3>
+            <p>通过 MCP 协议远程检查页面 DOM 结构，获取元素信息，分析样式应用情况。</p>
+            
+            <div class="code-block">
+// 示例：获取页面元素信息
+{
+  "method": "getElementInfo",
+  "params": {
+    "selector": "#main-content"
+  }
+}
+            </div>
+
+            <h3>⚡ 性能监控</h3>
+            <p>实时监控页面性能指标，包括加载时间、资源使用情况、内存占用等关键数据。</p>
+
+            <h3>🎨 样式调试</h3>
+            <p>远程修改页面样式，实时预览效果，支持 CSS 属性的动态调整和优化。</p>
+
+            <div class="code-block">
+// 示例：修改元素样式
+{
+  "method": "setElementStyle",
+  "params": {
+    "selector": ".header",
+    "styles": {
+      "backgroundColor": "#ff6b6b",
+      "fontSize": "18px"
+    }
+  }
+}
+            </div>
+
+            <h3>📱 响应式测试</h3>
+            <p>模拟不同设备和屏幕尺寸，测试页面的响应式设计效果。</p>
+
+            <div class="benefits">
+                <h3>🌟 使用 DevTools MCP 的优势</h3>
+                <ul>
+                    <li>自动化重复性调试任务，节省开发时间</li>
+                    <li>集成 AI 能力，智能分析和优化建议</li>
+                    <li>支持批量操作，提高调试效率</li>
+                    <li>提供详细的性能报告和优化建议</li>
+                    <li>支持自定义脚本和扩展功能</li>
+                    <li>与现有开发工具链无缝集成</li>
+                </ul>
+            </div>
+
+            <h2>实际应用场景</h2>
+            <p>Chrome DevTools MCP Server 在多种开发场景中都能发挥重要作用：</p>
+            
+            <h3>🧪 自动化测试</h3>
+            <p>结合测试框架，实现端到端的自动化测试，包括 UI 测试、功能测试和回归测试。</p>
+
+            <h3>📈 性能优化</h3>
+            <p>自动收集性能数据，识别性能瓶颈，提供优化建议和解决方案。</p>
+
+            <h3>🎨 UI/UX 调试</h3>
+            <p>快速调试和优化用户界面，确保在不同设备和浏览器上的一致体验。</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Google DevFest Workshop. 由 Dick 组织举办。</p>
+        </div>
+    </footer>
+</body>
+</html>

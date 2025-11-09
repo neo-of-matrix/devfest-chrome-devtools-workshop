@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - Google DevFest Workshop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #1a73e8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .profile-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .profile-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .profile-name {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .profile-title {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .profile-description {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .interests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .interest-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .interest-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .interest-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .interest-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contact-section {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .contact-info {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .contact-icon {
+            margin-right: 15px;
+            font-size: 24px;
+            color: #667eea;
+        }
+
+        .skills-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+
+        .skills-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .skill-name {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .skill-level {
+            background: #e9ecef;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-level-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .profile-card {
+                padding: 30px 20px;
+            }
+            
+            .avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">DevFest Workshop</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="gdg-devfest.html">GDG & DevFest</a></li>
+                <li><a href="devtools-mcp.html">DevTools MCP</a></li>
+                <li><a href="about-me.html">关于我</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>关于我</h1>
+            <p>认识这次 Workshop 的组织者</p>
+        </div>
+    </section>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-card">
+                <div class="avatar">D</div>
+                <h2 class="profile-name">Dick</h2>
+                <p class="profile-title">前端工程师</p>
+                <p class="profile-description">
+                    我是一名充满热情的前端工程师，专注于现代 Web 技术的研究和应用。我热爱探索新的开发工具和框架，
+                    致力于提升开发效率和用户体验。这次组织 DevFest Workshop，希望能够与更多的开发者分享和交流技术经验。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="skills-title">技术技能</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-name">HTML/CSS/JavaScript</div>
+                    <div class="skill-level">
+                        <div class="skill-level-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">React/Vue</div>
+                    <div class="skill-level">
+                        <div class="skill-level-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Chrome DevTools</div>
+                    <div class="skill-level">
+                        <div class="skill-level-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Node.js</div>
+                    <div class="skill-level">
+                        <div class="skill-level-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-info">
+                <h2 class="contact-title">我的兴趣爱好</h2>
+                <div class="interests">
+                    <div class="interest-item">
+                        <div class="interest-icon">✈️</div>
+                        <h3 class="interest-title">旅行</h3>
+                        <p>探索不同的文化和风景，拓宽视野，获得新的灵感和体验。</p>
+                    </div>
+                    <div class="interest-item">
+                        <div class="interest-icon">📚</div>
+                        <h3 class="interest-title">阅读</h3>
+                        <p>喜欢阅读技术书籍和科幻小说，不断学习新知识，保持技术敏感度。</p>
+                    </div>
+                    <div class="interest-item">
+                        <div class="interest-icon">🎵</div>
+                        <h3 class="interest-title">音乐</h3>
+                        <p>音乐是我工作和生活中的重要调剂，帮助我保持创造力和专注力。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-info">
+                <h2 class="contact-title">联系方式</h2>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span>718008320@qq.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <span>前端工程师</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🌟</span>
+                    <span>DevFest Workshop 组织者</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Google DevFest Workshop. 由 Dick 组织举办。</p>
+        </div>
+    </footer>
+</body>
+</html>
